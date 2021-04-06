@@ -1,0 +1,70 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Documentação da api de usuários",
+    "description": "Api de usuários",
+    "version": "1.0.0",
+    "contact": {
+      "email": "eu@rocketseat.com.br"
+    }
+  },
+    "paths": {
+      "/users": {
+        "post": {
+          "tags": ["User"],
+          "summary": "Cria um novo usuário",
+          "description": "Cria um novo usuário a partir dos dados enviados pelo corpo da requisição",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "name":  {
+                      "type": "string"
+                    }
+                  },
+                  "example": {
+                    "name": "nome do truta"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Created"
+            },
+            "400": {
+              "description": "User already exists"
+            }
+          }
+        },
+        "get": {
+          "tags": ["User"],
+          "summary": "Lista todos os usuários",
+          "description": "Lista todos os usuários",
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+}
