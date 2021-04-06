@@ -9,8 +9,6 @@ class User {
   public updated_at: Date;
 
   constructor() {
-    // Object.assign(this, props);
-
     if (!this.id) {
       this.id = uuidV4();
     }
