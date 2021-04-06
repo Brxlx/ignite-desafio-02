@@ -62,6 +62,9 @@
                   }
                 }
               }
+            },
+            "400": {
+              "description": "Error trying to list users"
             }
           }
         }
